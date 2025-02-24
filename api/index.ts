@@ -37,7 +37,7 @@ function generateRandomNumber(random: SeededRandom, min: number, max: number) {
   return random.nextRange(min, max);
 }
 
-function choseColorPalette(random: SeededRandom) {
+function chooseColorPalette(random: SeededRandom) {
   const colors = [
     [
       [196, 41, 95],
@@ -126,7 +126,7 @@ function generateWindows(random: SeededRandom, min: number, max: number) {
   return string;
 }
 
-function choseBuildingStyle(random: SeededRandom) {
+function chooseBuildingStyle(random: SeededRandom) {
   const stylesArray = [
     "-style1",
     "-style2",
@@ -149,7 +149,7 @@ function generateCityHtml(random: SeededRandom) {
   let rows = 8;
 
   const minimumBuildingHeight = cityHeight / rows;
-  const colorsArray = choseColorPalette(random);
+  const colorsArray = chooseColorPalette(random);
 
   let buildingsHtml = "";
 
@@ -174,7 +174,7 @@ function generateCityHtml(random: SeededRandom) {
         minimumBuildingHeight / generateRandomNumber(random, 3, 10);
 
       rowHtml += `
-        <div class="building${choseBuildingStyle(random)}" 
+        <div class="building${chooseBuildingStyle(random)}" 
              style="background-color: hsl(${theColor[0]}, ${theColor[1]}%, ${
         theColor[2]
       }%);
